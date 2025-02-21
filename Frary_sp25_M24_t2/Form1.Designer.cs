@@ -108,6 +108,7 @@
             btnDisplay.TabIndex = 8;
             btnDisplay.Text = "&Display Answer";
             btnDisplay.UseVisualStyleBackColor = true;
+            btnDisplay.Click += btnDisplay_Click;
             // 
             // btnClear
             // 
@@ -117,6 +118,7 @@
             btnClear.TabIndex = 9;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnQuit
             // 
@@ -126,6 +128,7 @@
             btnQuit.TabIndex = 10;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
+            btnQuit.Click += btnQuit_Click;
             // 
             // lstOut
             // 
