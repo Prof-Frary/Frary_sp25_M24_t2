@@ -39,6 +39,9 @@
             btnClear = new Button();
             btnQuit = new Button();
             lstOut = new ListBox();
+            txtPctDiscount = new TextBox();
+            label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -46,7 +49,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(109, 33);
+            label1.Location = new Point(130, 9);
             label1.Name = "label1";
             label1.Size = new Size(217, 30);
             label1.TabIndex = 0;
@@ -55,7 +58,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(58, 93);
+            label2.Location = new Point(56, 52);
             label2.Name = "label2";
             label2.Size = new Size(80, 15);
             label2.TabIndex = 1;
@@ -63,7 +66,7 @@
             // 
             // txtWidgetName
             // 
-            txtWidgetName.Location = new Point(158, 90);
+            txtWidgetName.Location = new Point(156, 49);
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(241, 23);
             txtWidgetName.TabIndex = 2;
@@ -71,7 +74,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(66, 134);
+            label3.Location = new Point(64, 93);
             label3.Name = "label3";
             label3.Size = new Size(74, 15);
             label3.TabIndex = 3;
@@ -79,22 +82,24 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(158, 131);
+            txtWidgetPrice.Location = new Point(156, 90);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(236, 23);
             txtWidgetPrice.TabIndex = 4;
+            txtWidgetPrice.Text = "10";
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(158, 172);
+            txtQuantity.Location = new Point(156, 131);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(236, 23);
             txtQuantity.TabIndex = 6;
+            txtQuantity.Text = "20";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(66, 175);
+            label4.Location = new Point(64, 134);
             label4.Name = "label4";
             label4.Size = new Size(53, 15);
             label4.TabIndex = 5;
@@ -140,11 +145,40 @@
             lstOut.TabIndex = 7;
             lstOut.TabStop = false;
             // 
+            // txtPctDiscount
+            // 
+            txtPctDiscount.Location = new Point(167, 167);
+            txtPctDiscount.Name = "txtPctDiscount";
+            txtPctDiscount.Size = new Size(236, 23);
+            txtPctDiscount.TabIndex = 12;
+            txtPctDiscount.Text = "45";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(64, 170);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 15);
+            label5.TabIndex = 11;
+            label5.Text = "Percent Discount";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(409, 170);
+            label6.Name = "label6";
+            label6.Size = new Size(17, 15);
+            label6.TabIndex = 13;
+            label6.Text = "%";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(497, 356);
+            Controls.Add(label6);
+            Controls.Add(txtPctDiscount);
+            Controls.Add(label5);
             Controls.Add(lstOut);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
@@ -176,5 +210,8 @@
         private Button btnClear;
         private Button btnQuit;
         private ListBox lstOut;
+        private TextBox txtPctDiscount;
+        private Label label5;
+        private Label label6;
     }
 }

@@ -1,3 +1,5 @@
+using static System.Net.Mime.MediaTypeNames;
+
 namespace Frary_sp25_M24_t2
 {
     public partial class Form1 : Form
@@ -32,16 +34,22 @@ namespace Frary_sp25_M24_t2
         {
             string widgetName;
             int quantity;
-            double widgetPrice, totalCost;
+            double widgetPrice, percentDiscount, totalCost;
             //read text boxes into variables 
             widgetName = txtWidgetName.Text;
             // Parse converts strings to ints or double
             widgetPrice = double.Parse(txtWidgetPrice.Text);
             quantity = int.Parse(txtQuantity.Text);
-
+            percentDiscount = double.Parse(txtPctDiscount.Text)/100;
             totalCost = widgetPrice * quantity;
-            lstOut.Items.Add(totalCost.ToString("C"));
-
+            lstOut.Items.Add("The widget name is " + widgetName);
+            lstOut.Items.Add("The widget price is " + widgetPrice.ToString("C"));
+            lstOut.Items.Add("The amount of widgets bought is " + quantity.ToString("N0"));
+            lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
+            lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
+            lstOut.Items.Add(Math.Sqrt(16));
+            lstOut.Items.Add(Math.Pow(4,3));
+            // + - * / %
 
 
 
