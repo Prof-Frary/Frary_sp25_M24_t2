@@ -27,7 +27,15 @@ namespace Frary_sp25_M24_t2
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult buttonSel;
+            buttonSel = MessageBox.Show(
+                "Do you really want to quit?",
+                "Exiting...",
+                MessageBoxButtons.YesNo);
+            if (buttonSel == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -51,18 +59,36 @@ namespace Frary_sp25_M24_t2
 
             if (priceValid && qValid && disValid)
             {
+                //Processing
                 totalCost = widgetPrice * quantity;
+
+
+                // Output
+
                 lstOut.Items.Add("The widget name is " + widgetName);
                 lstOut.Items.Add("The widget price is " + widgetPrice.ToString("C"));
                 lstOut.Items.Add("The amount of widgets bought is " + quantity.ToString("N0"));
                 lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
                 lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
-              //  lstOut.Items.Add(Math.Sqrt(16));
-               // lstOut.Items.Add(Math.Pow(4, 3));
+                //  lstOut.Items.Add(Math.Sqrt(16));
+                // lstOut.Items.Add(Math.Pow(4, 3));
                 // + - * / %
-            }else
+            }
+            else
             {
-                lstOut.Items.Add("some of the numric entruies were not entered correctly");
+                if (!priceValid)
+                {
+                    lstOut.Items.Add("The widget price was not entered as a numeric value");
+                }
+                
+                if (!qValid)
+                {
+                    lstOut.Items.Add("The quantity was not entered as a whole numeric value");
+                }
+                if (!disValid) {
+                    lstOut.Items.Add("The discount was not entered as a numeric value");
+                }
+
             }
 
 
