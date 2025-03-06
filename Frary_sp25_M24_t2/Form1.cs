@@ -8,14 +8,17 @@ namespace Frary_sp25_M24_t2
         {
             InitializeComponent();
         }
+        // Class level variable
+        private string customerType;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            rdoRegular.Checked = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+
             txtQuantity.Clear();
             txtWidgetName.Clear();
             txtWidgetPrice.Clear();
@@ -46,6 +49,7 @@ namespace Frary_sp25_M24_t2
             bool priceValid, qValid, disValid;
             //read text boxes into variables 
             widgetName = txtWidgetName.Text;
+            percentDiscount = 0.25;
             // Parse converts strings to ints or double
             /*
             widgetPrice = double.Parse(txtWidgetPrice.Text);
@@ -55,9 +59,9 @@ namespace Frary_sp25_M24_t2
             //convert parses to tryParse
             priceValid = double.TryParse(txtWidgetPrice.Text, out widgetPrice);
             qValid = int.TryParse(txtQuantity.Text, out quantity);
-            disValid = double.TryParse(txtPctDiscount.Text, out percentDiscount);
+            //    disValid = double.TryParse(txtPctDiscount.Text, out percentDiscount);
 
-            if (priceValid && qValid && disValid)
+            if (priceValid && qValid)
             {
                 //Processing
                 totalCost = widgetPrice * quantity;
@@ -80,18 +84,41 @@ namespace Frary_sp25_M24_t2
                 {
                     lstOut.Items.Add("The widget price was not entered as a numeric value");
                 }
-                
                 if (!qValid)
                 {
                     lstOut.Items.Add("The quantity was not entered as a whole numeric value");
-                }
-                if (!disValid) {
-                    lstOut.Items.Add("The discount was not entered as a numeric value");
                 }
 
             }
 
 
+        }
+
+        private void rdoRegular_CheckedChanged(object sender, EventArgs e)
+        {
+
+            // this will run in cases where check = true and false our code should oy run when true
+
+            if (rdoRegular.Checked)
+            {
+                customerType = "Regular";
+            }
+        }
+
+        private void rdoGold_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoGold.Checked)
+            {
+                customerType = "Gold";
+            }
+        }
+
+        private void rdoElite_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoElite.Checked)
+            {
+                customerType = "Elite";
+            }
         }
     }
 }

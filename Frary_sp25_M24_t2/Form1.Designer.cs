@@ -39,9 +39,11 @@
             btnClear = new Button();
             btnQuit = new Button();
             lstOut = new ListBox();
-            txtPctDiscount = new TextBox();
-            label5 = new Label();
-            label6 = new Label();
+            groupBox1 = new GroupBox();
+            rdoElite = new RadioButton();
+            rdoGold = new RadioButton();
+            rdoRegular = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -58,7 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(56, 52);
+            label2.Location = new Point(61, 163);
             label2.Name = "label2";
             label2.Size = new Size(80, 15);
             label2.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             // txtWidgetName
             // 
-            txtWidgetName.Location = new Point(156, 49);
+            txtWidgetName.Location = new Point(161, 160);
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(241, 23);
             txtWidgetName.TabIndex = 2;
@@ -74,7 +76,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(64, 93);
+            label3.Location = new Point(69, 204);
             label3.Name = "label3";
             label3.Size = new Size(74, 15);
             label3.TabIndex = 3;
@@ -82,7 +84,7 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(156, 90);
+            txtWidgetPrice.Location = new Point(161, 201);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(236, 23);
             txtWidgetPrice.TabIndex = 4;
@@ -90,7 +92,7 @@
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(156, 131);
+            txtQuantity.Location = new Point(161, 242);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(236, 23);
             txtQuantity.TabIndex = 6;
@@ -99,7 +101,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(64, 134);
+            label4.Location = new Point(69, 245);
             label4.Name = "label4";
             label4.Size = new Size(53, 15);
             label4.TabIndex = 5;
@@ -107,7 +109,7 @@
             // 
             // btnDisplay
             // 
-            btnDisplay.Location = new Point(44, 305);
+            btnDisplay.Location = new Point(49, 416);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new Size(75, 39);
             btnDisplay.TabIndex = 8;
@@ -117,7 +119,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(211, 305);
+            btnClear.Location = new Point(216, 416);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 39);
             btnClear.TabIndex = 9;
@@ -127,7 +129,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(383, 305);
+            btnQuit.Location = new Point(388, 416);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 39);
             btnQuit.TabIndex = 10;
@@ -139,46 +141,63 @@
             // 
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 15;
-            lstOut.Location = new Point(58, 205);
+            lstOut.Location = new Point(63, 316);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(400, 94);
             lstOut.TabIndex = 7;
             lstOut.TabStop = false;
             // 
-            // txtPctDiscount
+            // groupBox1
             // 
-            txtPctDiscount.Location = new Point(167, 167);
-            txtPctDiscount.Name = "txtPctDiscount";
-            txtPctDiscount.Size = new Size(236, 23);
-            txtPctDiscount.TabIndex = 12;
-            txtPctDiscount.Text = "45";
+            groupBox1.Controls.Add(rdoElite);
+            groupBox1.Controls.Add(rdoGold);
+            groupBox1.Controls.Add(rdoRegular);
+            groupBox1.Location = new Point(58, 57);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(405, 78);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Customer Type";
             // 
-            // label5
+            // rdoElite
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(64, 170);
-            label5.Name = "label5";
-            label5.Size = new Size(97, 15);
-            label5.TabIndex = 11;
-            label5.Text = "Percent Discount";
+            rdoElite.AutoSize = true;
+            rdoElite.Location = new Point(305, 29);
+            rdoElite.Name = "rdoElite";
+            rdoElite.Size = new Size(47, 19);
+            rdoElite.TabIndex = 2;
+            rdoElite.Text = "Elite";
+            rdoElite.UseVisualStyleBackColor = true;
+            rdoElite.CheckedChanged += rdoElite_CheckedChanged;
             // 
-            // label6
+            // rdoGold
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(409, 170);
-            label6.Name = "label6";
-            label6.Size = new Size(17, 15);
-            label6.TabIndex = 13;
-            label6.Text = "%";
+            rdoGold.AutoSize = true;
+            rdoGold.Location = new Point(168, 29);
+            rdoGold.Name = "rdoGold";
+            rdoGold.Size = new Size(50, 19);
+            rdoGold.TabIndex = 1;
+            rdoGold.Text = "Gold";
+            rdoGold.UseVisualStyleBackColor = true;
+            rdoGold.CheckedChanged += rdoGold_CheckedChanged;
+            // 
+            // rdoRegular
+            // 
+            rdoRegular.AutoSize = true;
+            rdoRegular.Location = new Point(31, 29);
+            rdoRegular.Name = "rdoRegular";
+            rdoRegular.Size = new Size(65, 19);
+            rdoRegular.TabIndex = 0;
+            rdoRegular.Text = "Regular";
+            rdoRegular.UseVisualStyleBackColor = true;
+            rdoRegular.CheckedChanged += rdoRegular_CheckedChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(497, 356);
-            Controls.Add(label6);
-            Controls.Add(txtPctDiscount);
-            Controls.Add(label5);
+            ClientSize = new Size(522, 477);
+            Controls.Add(groupBox1);
             Controls.Add(lstOut);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
@@ -193,6 +212,8 @@
             Name = "Form1";
             Text = "Your Name Here";
             Load += Form1_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,8 +231,9 @@
         private Button btnClear;
         private Button btnQuit;
         private ListBox lstOut;
-        private TextBox txtPctDiscount;
-        private Label label5;
-        private Label label6;
+        private GroupBox groupBox1;
+        private RadioButton rdoElite;
+        private RadioButton rdoGold;
+        private RadioButton rdoRegular;
     }
 }
