@@ -10,6 +10,10 @@ namespace Frary_sp25_M24_t2
         }
         // Class level variable
         private string customerType;
+        const string REGULAR = "Regular";
+        const string GOLD = "Gold";
+        const string ELITE = "Elite";
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -24,6 +28,7 @@ namespace Frary_sp25_M24_t2
             txtWidgetPrice.Clear();
             lstOut.Items.Clear();
             txtWidgetName.Focus();
+            rdoRegular.Checked = true;
 
 
         }
@@ -49,7 +54,7 @@ namespace Frary_sp25_M24_t2
             bool priceValid, qValid, disValid;
             //read text boxes into variables 
             widgetName = txtWidgetName.Text;
-            percentDiscount = 0.25;
+            //  percentDiscount = 0.25;
             // Parse converts strings to ints or double
             /*
             widgetPrice = double.Parse(txtWidgetPrice.Text);
@@ -63,9 +68,24 @@ namespace Frary_sp25_M24_t2
 
             if (priceValid && qValid)
             {
+                switch (customerType)
+                {
+                    case REGULAR:
+                        percentDiscount = 0.0;
+                        break;
+                    case GOLD:
+                        percentDiscount = 0.10;
+                        break;
+                    case ELITE:
+                        percentDiscount = 0.20;
+                        break;
+                    default:
+                        lstOut.Items.Add("This should never happen");
+                        percentDiscount = 0.0;
+                        break;
+                }
                 //Processing
                 totalCost = widgetPrice * quantity;
-
 
                 // Output
 
@@ -74,20 +94,24 @@ namespace Frary_sp25_M24_t2
                 lstOut.Items.Add("The amount of widgets bought is " + quantity.ToString("N0"));
                 lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
                 lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
+                btnClear.Focus();
                 //  lstOut.Items.Add(Math.Sqrt(16));
                 // lstOut.Items.Add(Math.Pow(4, 3));
                 // + - * / %
             }
             else
             {
-                if (!priceValid)
-                {
-                    lstOut.Items.Add("The widget price was not entered as a numeric value");
-                }
                 if (!qValid)
                 {
                     lstOut.Items.Add("The quantity was not entered as a whole numeric value");
+                    txtQuantity.Focus();
                 }
+                if (!priceValid)
+                {
+                    lstOut.Items.Add("The widget price was not entered as a numeric value");
+                    txtWidgetPrice.Focus();
+                }
+
 
             }
 
@@ -101,7 +125,7 @@ namespace Frary_sp25_M24_t2
 
             if (rdoRegular.Checked)
             {
-                customerType = "Regular";
+                customerType = REGULAR;
             }
         }
 
@@ -109,7 +133,7 @@ namespace Frary_sp25_M24_t2
         {
             if (rdoGold.Checked)
             {
-                customerType = "Gold";
+                customerType = GOLD;
             }
         }
 
@@ -117,7 +141,7 @@ namespace Frary_sp25_M24_t2
         {
             if (rdoElite.Checked)
             {
-                customerType = "Elite";
+                customerType = ELITE;
             }
         }
     }
