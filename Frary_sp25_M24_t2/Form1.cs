@@ -10,6 +10,8 @@ namespace Frary_sp25_M24_t2
         }
         // Class level variable
         private string customerType;
+        private string cfgFile = "DiscountCFG.txt";
+        private string logFile = "LogTransCFG.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
         const string ELITE = "Elite";
@@ -51,7 +53,10 @@ namespace Frary_sp25_M24_t2
             string widgetName;
             int quantity;
             double widgetPrice, percentDiscount, totalCost;
-            bool priceValid, qValid, disValid;
+            bool priceValid, qValid;
+            StreamWriter log;
+
+
             //read text boxes into variables 
             widgetName = txtWidgetName.Text;
             //  percentDiscount = 0.25;
@@ -88,13 +93,34 @@ namespace Frary_sp25_M24_t2
                 totalCost = widgetPrice * quantity;
 
                 // Output
-
+               
                 lstOut.Items.Add("The widget name is " + widgetName);
+                lstOut.Items.Add("The Customer type is " + customerType);
                 lstOut.Items.Add("The widget price is " + widgetPrice.ToString("C"));
                 lstOut.Items.Add("The amount of widgets bought is " + quantity.ToString("N0"));
                 lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
                 lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
+           /*
+                lstOut.Items.Add(DateTime.Now.ToString("t"));
+                lstOut.Items.Add(DateTime.Now.ToString("T"));
+                lstOut.Items.Add(DateTime.Now.ToString("d"));
+                lstOut.Items.Add(DateTime.Now.ToString("D"));
+                lstOut.Items.Add(DateTime.Now.ToString("G"));
+           */
                 btnClear.Focus();
+                // this opens the log file for append
+                
+                log = File.AppendText(logFile);
+                log.WriteLine("*************** Beginning of Transaction " + DateTime.Now.ToString("G") +  "  *****************");
+                log.WriteLine("The widget name is " + widgetName);
+                log.WriteLine("The Customer type is " + customerType);
+                log.WriteLine("The widget price is " + widgetPrice.ToString("C"));
+                log.WriteLine("The amount of widgets bought is " + quantity.ToString("N0"));
+                log.WriteLine("The total cost for this transaction is " + totalCost.ToString("C"));
+                log.WriteLine("The percent is is " + percentDiscount.ToString("p1"));
+                // close the file
+              log.Close();
+
                 //  lstOut.Items.Add(Math.Sqrt(16));
                 // lstOut.Items.Add(Math.Pow(4, 3));
                 // + - * / %

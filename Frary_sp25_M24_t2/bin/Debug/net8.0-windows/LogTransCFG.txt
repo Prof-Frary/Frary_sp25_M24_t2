@@ -1,0 +1,79 @@
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+The widget name is 
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction   *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of TRansaction 3/12/2025 11:08:33 AM  *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
