@@ -10,8 +10,9 @@ namespace Frary_sp25_M24_t2
         }
         // Class level variable
         private string customerType;
+        // ICA 6 - declare variable for each filename
         private string cfgFile = "DiscountCFG.txt";
-        private string logFile = "LogTransCFG.txt";
+        private string logFile = "LogTrans.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
         const string ELITE = "Elite";
@@ -54,6 +55,7 @@ namespace Frary_sp25_M24_t2
             int quantity;
             double widgetPrice, percentDiscount, totalCost;
             bool priceValid, qValid;
+            // declare streamwrite - ICA 6
             StreamWriter log;
 
 
@@ -109,8 +111,10 @@ namespace Frary_sp25_M24_t2
            */
                 btnClear.Focus();
                 // this opens the log file for append
-                
+                // ICA 6
+                // Opening file to append
                 log = File.AppendText(logFile);
+                // write each line form log fiel and Beginning of tranactioo
                 log.WriteLine("*************** Beginning of Transaction " + DateTime.Now.ToString("G") +  "  *****************");
                 log.WriteLine("The widget name is " + widgetName);
                 log.WriteLine("The Customer type is " + customerType);
@@ -118,7 +122,7 @@ namespace Frary_sp25_M24_t2
                 log.WriteLine("The amount of widgets bought is " + quantity.ToString("N0"));
                 log.WriteLine("The total cost for this transaction is " + totalCost.ToString("C"));
                 log.WriteLine("The percent is is " + percentDiscount.ToString("p1"));
-                // close the file
+                // ICA6 -close the file
               log.Close();
 
                 //  lstOut.Items.Add(Math.Sqrt(16));
