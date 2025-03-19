@@ -16,11 +16,41 @@ namespace Frary_sp25_M24_t2
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
         const string ELITE = "Elite";
+        // ICA 7
+        private double regularDiscount;
+        private double goldDiscount;
+        private double eliteDiscount;
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            StreamReader srCfg;
             rdoRegular.Checked = true;
+            bool fileWasNotFound = true;
+            do
+            {
+                try
+                {
+                    srCfg = File.OpenText(cfgFile);
+                    fileWasNotFound = false;
+                    regularDiscount = double.Parse(srCfg.ReadLine());
+                    goldDiscount = double.Parse(srCfg.ReadLine());
+                    eliteDiscount = double.Parse(srCfg.ReadLine());
+                    srCfg.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show(ex.Message + " Please enter a new file name", "File Not Found");
+                    OFD.ShowDialog();
+                    cfgFile = OFD.FileName;
+                }
+                catch (IOException ex)
+                {
+                    // will do nexttime
+                }
+            } while (fileWasNotFound);
+
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -78,13 +108,13 @@ namespace Frary_sp25_M24_t2
                 switch (customerType)
                 {
                     case REGULAR:
-                        percentDiscount = 0.0;
+                        percentDiscount = regularDiscount;
                         break;
                     case GOLD:
-                        percentDiscount = 0.10;
+                        percentDiscount = goldDiscount;
                         break;
                     case ELITE:
-                        percentDiscount = 0.20;
+                        percentDiscount = eliteDiscount;
                         break;
                     default:
                         lstOut.Items.Add("This should never happen");

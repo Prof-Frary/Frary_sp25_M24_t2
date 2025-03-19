@@ -1,0 +1,105 @@
+*************** Beginning of Transaction 3/19/2025 10:56:48 AM  *****************
+The widget name is dsljglsfd
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of Transaction 3/19/2025 10:56:52 AM  *****************
+The widget name is dsljglsfd
+The Customer type is Gold
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 10.0%
+*************** Beginning of Transaction 3/19/2025 10:56:57 AM  *****************
+The widget name is dsljglsfd
+The Customer type is Elite
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 20.0%
+*************** Beginning of Transaction 3/19/2025 11:09:05 AM  *****************
+The widget name is fdgdfgds
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of Transaction 3/19/2025 11:09:10 AM  *****************
+The widget name is fdgdfgds
+The Customer type is Gold
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 10.0%
+*************** Beginning of Transaction 3/19/2025 11:09:15 AM  *****************
+The widget name is fdgdfgds
+The Customer type is Elite
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 20.0%
+*************** Beginning of Transaction 3/19/2025 11:10:12 AM  *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 0.0%
+*************** Beginning of Transaction 3/19/2025 11:10:15 AM  *****************
+The widget name is 
+The Customer type is Gold
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 10.0%
+*************** Beginning of Transaction 3/19/2025 11:10:18 AM  *****************
+The widget name is 
+The Customer type is Elite
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 20.0%
+*************** Beginning of Transaction 3/19/2025 11:10:56 AM  *****************
+The widget name is 
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 5.0%
+*************** Beginning of Transaction 3/19/2025 11:10:59 AM  *****************
+The widget name is 
+The Customer type is Gold
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 15.0%
+*************** Beginning of Transaction 3/19/2025 11:11:03 AM  *****************
+The widget name is 
+The Customer type is Elite
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 25.0%
+*************** Beginning of Transaction 3/19/2025 11:39:43 AM  *****************
+The widget name is fhgfhgs
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 5.0%
+*************** Beginning of Transaction 3/19/2025 11:39:49 AM  *****************
+The widget name is fhgfhgs
+The Customer type is Gold
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 15.0%
+*************** Beginning of Transaction 3/19/2025 11:39:54 AM  *****************
+The widget name is fhgfhgs
+The Customer type is Elite
+The widget price is $10.00
+The amount of widgets bought is 20
+The total cost for this transaction is $200.00
+The percent is is 25.0%

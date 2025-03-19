@@ -43,6 +43,7 @@
             rdoElite = new RadioButton();
             rdoGold = new RadioButton();
             rdoRegular = new RadioButton();
+            OFD = new OpenFileDialog();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -235,5 +236,6 @@
         private RadioButton rdoElite;
         private RadioButton rdoGold;
         private RadioButton rdoRegular;
+        private OpenFileDialog OFD;
     }
 }
