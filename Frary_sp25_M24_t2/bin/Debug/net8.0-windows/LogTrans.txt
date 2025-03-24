@@ -103,3 +103,11 @@ The widget price is $10.00
 The amount of widgets bought is 20
 The total cost for this transaction is $200.00
 The percent is is 25.0%
+*************** Beginning of Transaction 3/24/2025 10:24:11 AM  *****************
+The widget name is ufgosdJO
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The subtotal  is $200.00
+The percent discount is 5%
+The total cost for this transaction is $210.00

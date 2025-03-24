@@ -1,5 +1,7 @@
 
 
+using System.Security.Policy;
+
 namespace Frary_sp25_M24_t2
 {
     public partial class Form1 : Form
@@ -11,7 +13,7 @@ namespace Frary_sp25_M24_t2
         // Class level variable
         private string customerType;
         // ICA 6 - declare variable for each filename
-        private string cfgFile = "DiscountCFG.txt";
+        private string cfgFile = "DiscountCFG1.txt";
         private string logFile = "LogTrans.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
@@ -41,12 +43,22 @@ namespace Frary_sp25_M24_t2
                 catch (FileNotFoundException ex)
                 {
                     MessageBox.Show(ex.Message + " Please enter a new file name", "File Not Found");
+                    // OFD.InitialDirectory = 
+                    OFD.Filter = "Text Files |*.txt | All Files | *.*";
+                    OFD.Title = "Open Configuration File";
                     OFD.ShowDialog();
                     cfgFile = OFD.FileName;
                 }
-                catch (IOException ex)
+                catch (FormatException ex)
                 {
-                    // will do nexttime
+                    // if something is bad in the file you can't depend on anything in the file
+                    // set discounts to some default values
+                    lstOut.Items.Add("File data  corrupted. Values were set to defaults");
+                    lstOut.Items.Add(ex.Message);
+                    regularDiscount = 0.2;
+                    goldDiscount = 0.25;
+                    eliteDiscount = 0.3;
+
                 }
             } while (fileWasNotFound);
 
@@ -85,6 +97,7 @@ namespace Frary_sp25_M24_t2
             int quantity;
             double widgetPrice, percentDiscount, totalCost;
             bool priceValid, qValid;
+            double amtDiscount, subTotal;
             // declare streamwrite - ICA 6
             StreamWriter log;
 
@@ -122,7 +135,9 @@ namespace Frary_sp25_M24_t2
                         break;
                 }
                 //Processing
-                totalCost = widgetPrice * quantity;
+                subTotal = widgetPrice * quantity;
+                amtDiscount = subTotal * percentDiscount;
+                totalCost = subTotal - amtDiscount;
 
                 // Output
                
@@ -130,6 +145,9 @@ namespace Frary_sp25_M24_t2
                 lstOut.Items.Add("The Customer type is " + customerType);
                 lstOut.Items.Add("The widget price is " + widgetPrice.ToString("C"));
                 lstOut.Items.Add("The amount of widgets bought is " + quantity.ToString("N0"));
+                lstOut.Items.Add("The subtotal  is " + subTotal.ToString("C"));
+                lstOut.Items.Add("The percent discount is " + percentDiscount.ToString("p0"));
+                lstOut.Items.Add("The amount of the  discount is " + amtDiscount.ToString("C"));
                 lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
                 lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
            /*
@@ -150,8 +168,10 @@ namespace Frary_sp25_M24_t2
                 log.WriteLine("The Customer type is " + customerType);
                 log.WriteLine("The widget price is " + widgetPrice.ToString("C"));
                 log.WriteLine("The amount of widgets bought is " + quantity.ToString("N0"));
+                log.WriteLine("The subtotal  is " + subTotal.ToString("C"));
+                log.WriteLine("The percent discount is " + percentDiscount.ToString("p0"));
                 log.WriteLine("The total cost for this transaction is " + totalCost.ToString("C"));
-                log.WriteLine("The percent is is " + percentDiscount.ToString("p1"));
+              
                 // ICA6 -close the file
               log.Close();
 

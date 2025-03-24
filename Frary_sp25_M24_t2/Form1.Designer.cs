@@ -155,7 +155,7 @@
             groupBox1.Controls.Add(rdoRegular);
             groupBox1.Location = new Point(58, 57);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(405, 78);
+            groupBox1.Size = new Size(405, 63);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Customer Type";
