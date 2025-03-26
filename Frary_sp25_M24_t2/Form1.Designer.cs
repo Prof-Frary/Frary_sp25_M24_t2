@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
+            lblWidgetName = new Label();
             txtWidgetName = new TextBox();
             label3 = new Label();
             txtWidgetPrice = new TextBox();
@@ -58,14 +58,14 @@
             label1.TabIndex = 0;
             label1.Text = "Frary's Widget Factory";
             // 
-            // label2
+            // lblWidgetName
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(61, 163);
-            label2.Name = "label2";
-            label2.Size = new Size(80, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Widget Name";
+            lblWidgetName.AutoSize = true;
+            lblWidgetName.Location = new Point(61, 163);
+            lblWidgetName.Name = "lblWidgetName";
+            lblWidgetName.Size = new Size(80, 15);
+            lblWidgetName.TabIndex = 1;
+            lblWidgetName.Text = "Widget Name";
             // 
             // txtWidgetName
             // 
@@ -153,7 +153,7 @@
             groupBox1.Controls.Add(rdoElite);
             groupBox1.Controls.Add(rdoGold);
             groupBox1.Controls.Add(rdoRegular);
-            groupBox1.Location = new Point(58, 57);
+            groupBox1.Location = new Point(61, 54);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(405, 63);
             groupBox1.TabIndex = 14;
@@ -208,7 +208,7 @@
             Controls.Add(txtWidgetPrice);
             Controls.Add(label3);
             Controls.Add(txtWidgetName);
-            Controls.Add(label2);
+            Controls.Add(lblWidgetName);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Your Name Here";
@@ -222,7 +222,7 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label lblWidgetName;
         private TextBox txtWidgetName;
         private Label label3;
         private TextBox txtWidgetPrice;

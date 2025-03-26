@@ -35,10 +35,26 @@ namespace Frary_sp25_M24_t2
                 {
                     srCfg = File.OpenText(cfgFile);
                     fileWasNotFound = false;
-                    regularDiscount = double.Parse(srCfg.ReadLine());
-                    goldDiscount = double.Parse(srCfg.ReadLine());
-                    eliteDiscount = double.Parse(srCfg.ReadLine());
-                    srCfg.Close();
+                    try
+                    {
+                        regularDiscount = double.Parse(srCfg.ReadLine());
+                        goldDiscount = double.Parse(srCfg.ReadLine());
+                        eliteDiscount = double.Parse(srCfg.ReadLine());
+                        srCfg.Close();
+                    }
+                    catch (FormatException ex)
+                    {
+                        // if something is bad in the file you can't depend on anything in the file
+                        // set discounts to some default values
+                        lstOut.ForeColor = Color.Red;
+                        lstOut.Items.Add("File data  corrupted. Values were set to defaults");
+                        lstOut.Items.Add(ex.Message);
+                        regularDiscount = 0.2;
+                        goldDiscount = 0.25;
+                        eliteDiscount = 0.3;
+                        srCfg.Close();
+                    }
+
                 }
                 catch (FileNotFoundException ex)
                 {
@@ -49,20 +65,7 @@ namespace Frary_sp25_M24_t2
                     OFD.ShowDialog();
                     cfgFile = OFD.FileName;
                 }
-                catch (FormatException ex)
-                {
-                    // if something is bad in the file you can't depend on anything in the file
-                    // set discounts to some default values
-                    lstOut.Items.Add("File data  corrupted. Values were set to defaults");
-                    lstOut.Items.Add(ex.Message);
-                    regularDiscount = 0.2;
-                    goldDiscount = 0.25;
-                    eliteDiscount = 0.3;
-
-                }
             } while (fileWasNotFound);
-
-            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -140,7 +143,7 @@ namespace Frary_sp25_M24_t2
                 totalCost = subTotal - amtDiscount;
 
                 // Output
-               
+
                 lstOut.Items.Add("The widget name is " + widgetName);
                 lstOut.Items.Add("The Customer type is " + customerType);
                 lstOut.Items.Add("The widget price is " + widgetPrice.ToString("C"));
@@ -150,20 +153,20 @@ namespace Frary_sp25_M24_t2
                 lstOut.Items.Add("The amount of the  discount is " + amtDiscount.ToString("C"));
                 lstOut.Items.Add("The total cost for this transaction is " + totalCost.ToString("C"));
                 lstOut.Items.Add("The percent is is " + percentDiscount.ToString("p1"));
-           /*
-                lstOut.Items.Add(DateTime.Now.ToString("t"));
-                lstOut.Items.Add(DateTime.Now.ToString("T"));
-                lstOut.Items.Add(DateTime.Now.ToString("d"));
-                lstOut.Items.Add(DateTime.Now.ToString("D"));
-                lstOut.Items.Add(DateTime.Now.ToString("G"));
-           */
+                /*
+                     lstOut.Items.Add(DateTime.Now.ToString("t"));
+                     lstOut.Items.Add(DateTime.Now.ToString("T"));
+                     lstOut.Items.Add(DateTime.Now.ToString("d"));
+                     lstOut.Items.Add(DateTime.Now.ToString("D"));
+                     lstOut.Items.Add(DateTime.Now.ToString("G"));
+                */
                 btnClear.Focus();
                 // this opens the log file for append
                 // ICA 6
                 // Opening file to append
                 log = File.AppendText(logFile);
                 // write each line form log fiel and Beginning of tranactioo
-                log.WriteLine("*************** Beginning of Transaction " + DateTime.Now.ToString("G") +  "  *****************");
+                log.WriteLine("*************** Beginning of Transaction " + DateTime.Now.ToString("G") + "  *****************");
                 log.WriteLine("The widget name is " + widgetName);
                 log.WriteLine("The Customer type is " + customerType);
                 log.WriteLine("The widget price is " + widgetPrice.ToString("C"));
@@ -171,9 +174,9 @@ namespace Frary_sp25_M24_t2
                 log.WriteLine("The subtotal  is " + subTotal.ToString("C"));
                 log.WriteLine("The percent discount is " + percentDiscount.ToString("p0"));
                 log.WriteLine("The total cost for this transaction is " + totalCost.ToString("C"));
-              
+
                 // ICA6 -close the file
-              log.Close();
+                log.Close();
 
                 //  lstOut.Items.Add(Math.Sqrt(16));
                 // lstOut.Items.Add(Math.Pow(4, 3));
