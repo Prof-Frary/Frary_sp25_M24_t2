@@ -22,7 +22,43 @@ namespace Frary_sp25_M24_t2
         private double regularDiscount;
         private double goldDiscount;
         private double eliteDiscount;
+        //ICA 8
+        //Property that doesn't allow setting to
+        //negative or greater than 50%
+        public double RegularDiscount
+        {
+            get { return regularDiscount; }
+            set
+            {
+                if (value >= 0 || value <= .5)
+                {
+                    regularDiscount = value;
+                }
+            }
+        }
+        public double GoldDiscount
+        {
+            get { return goldDiscount; }
+            set
+            {
+                if (value >= 0 || value <= .5)
+                {
+                    goldDiscount = value;
+                }
+            }
+        }
 
+        public double EliteDiscount
+        {
+            get { return eliteDiscount; }
+            set
+            {
+                if (value >= 0 || value <= .5)
+                {
+                    eliteDiscount = value;
+                }
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,9 +73,9 @@ namespace Frary_sp25_M24_t2
                     fileWasNotFound = false;
                     try
                     {
-                        regularDiscount = double.Parse(srCfg.ReadLine());
-                        goldDiscount = double.Parse(srCfg.ReadLine());
-                        eliteDiscount = double.Parse(srCfg.ReadLine());
+                        RegularDiscount = double.Parse(srCfg.ReadLine());
+                        GoldDiscount = double.Parse(srCfg.ReadLine());
+                        EliteDiscount = double.Parse(srCfg.ReadLine());
                         srCfg.Close();
                     }
                     catch (FormatException ex)
