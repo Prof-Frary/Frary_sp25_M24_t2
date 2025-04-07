@@ -44,7 +44,11 @@
             rdoGold = new RadioButton();
             rdoRegular = new RadioButton();
             OFD = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            quitToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -52,7 +56,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(130, 9);
+            label1.Location = new Point(151, 41);
             label1.Name = "label1";
             label1.Size = new Size(217, 30);
             label1.TabIndex = 0;
@@ -153,7 +157,7 @@
             groupBox1.Controls.Add(rdoElite);
             groupBox1.Controls.Add(rdoGold);
             groupBox1.Controls.Add(rdoRegular);
-            groupBox1.Location = new Point(61, 54);
+            groupBox1.Location = new Point(61, 74);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(405, 63);
             groupBox1.TabIndex = 14;
@@ -193,6 +197,29 @@
             rdoRegular.UseVisualStyleBackColor = true;
             rdoRegular.CheckedChanged += rdoRegular_CheckedChanged;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, quitToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(522, 24);
+            menuStrip1.TabIndex = 15;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(61, 20);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
+            // 
+            // quitToolStripMenuItem
+            // 
+            quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            quitToolStripMenuItem.Size = new Size(42, 20);
+            quitToolStripMenuItem.Text = "Quit";
+            quitToolStripMenuItem.Click += btnQuit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -210,11 +237,15 @@
             Controls.Add(txtWidgetName);
             Controls.Add(lblWidgetName);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Your Name Here";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,5 +268,8 @@
         private RadioButton rdoGold;
         private RadioButton rdoRegular;
         private OpenFileDialog OFD;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem settingsToolStripMenuItem;
+        private ToolStripMenuItem quitToolStripMenuItem;
     }
 }

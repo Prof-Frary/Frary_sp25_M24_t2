@@ -13,15 +13,20 @@ namespace Frary_sp25_M24_t2
         // Class level variable
         private string customerType;
         // ICA 6 - declare variable for each filename
-        private string cfgFile = "DiscountCFG1.txt";
+        public string cfgFile = "DiscountCFG1.txt";
         private string logFile = "LogTrans.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
         const string ELITE = "Elite";
+        const double MAX_DISCOUNT = 0.99;
         // ICA 7
         private double regularDiscount;
         private double goldDiscount;
         private double eliteDiscount;
+        // ICA 9
+        // sf  stands for settings form
+        Form2 sf;
+
         //ICA 8
         //Property that doesn't allow setting to
         //negative or greater than 50%
@@ -30,7 +35,7 @@ namespace Frary_sp25_M24_t2
             get { return regularDiscount; }
             set
             {
-                if (value >= 0 || value <= .5)
+                if (value >= 0 || value <= MAX_DISCOUNT)
                 {
                     regularDiscount = value;
                 }
@@ -41,7 +46,7 @@ namespace Frary_sp25_M24_t2
             get { return goldDiscount; }
             set
             {
-                if (value >= 0 || value <= .5)
+                if (value >= 0 || value <= MAX_DISCOUNT)
                 {
                     goldDiscount = value;
                 }
@@ -53,7 +58,7 @@ namespace Frary_sp25_M24_t2
             get { return eliteDiscount; }
             set
             {
-                if (value >= 0 || value <= .5)
+                if (value >= 0 || value <= MAX_DISCOUNT)
                 {
                     eliteDiscount = value;
                 }
@@ -63,6 +68,11 @@ namespace Frary_sp25_M24_t2
         private void Form1_Load(object sender, EventArgs e)
         {
             StreamReader srCfg;
+
+            // ica 9
+            sf = new Form2(this);
+
+
             rdoRegular.Checked = true;
             bool fileWasNotFound = true;
             do
@@ -262,6 +272,14 @@ namespace Frary_sp25_M24_t2
             {
                 customerType = ELITE;
             }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sf.txtRegular.Text = RegularDiscount.ToString();    
+            sf.txtGold.Text = GoldDiscount.ToString();
+            sf.txtElite.Text = EliteDiscount.ToString();    
+            sf.ShowDialog();    
         }
     }
 }
