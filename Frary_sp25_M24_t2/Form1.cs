@@ -13,7 +13,7 @@ namespace Frary_sp25_M24_t2
         // Class level variable
         private string customerType;
         // ICA 6 - declare variable for each filename
-        internal string cfgFile = "DiscountCFG.txt";
+        internal string cfgFile = "DiscountCFG1.txt";
         private string logFile = "LogTrans.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
