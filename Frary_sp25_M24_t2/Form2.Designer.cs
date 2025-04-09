@@ -132,8 +132,8 @@
         private Label label3;
         private Button btnReturn;
         private Label label4;
-        public TextBox txtRegular;
-        public TextBox txtGold;
-        public TextBox txtElite;
+        internal TextBox txtRegular;
+        internal TextBox txtGold;
+        internal TextBox txtElite;
     }
 }

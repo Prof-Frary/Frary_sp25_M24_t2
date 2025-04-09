@@ -4,16 +4,16 @@ using System.Security.Policy;
 
 namespace Frary_sp25_M24_t2
 {
-    public partial class Form1 : Form
+    internal partial class Form1 : Form
     {
-        public Form1()
+        internal Form1()
         {
             InitializeComponent();
         }
         // Class level variable
         private string customerType;
         // ICA 6 - declare variable for each filename
-        public string cfgFile = "DiscountCFG1.txt";
+        internal string cfgFile = "DiscountCFG.txt";
         private string logFile = "LogTrans.txt";
         const string REGULAR = "Regular";
         const string GOLD = "Gold";
@@ -30,7 +30,7 @@ namespace Frary_sp25_M24_t2
         //ICA 8
         //Property that doesn't allow setting to
         //negative or greater than 50%
-        public double RegularDiscount
+        internal double RegularDiscount
         {
             get { return regularDiscount; }
             set
@@ -41,7 +41,7 @@ namespace Frary_sp25_M24_t2
                 }
             }
         }
-        public double GoldDiscount
+       internal double GoldDiscount
         {
             get { return goldDiscount; }
             set
@@ -53,7 +53,7 @@ namespace Frary_sp25_M24_t2
             }
         }
 
-        public double EliteDiscount
+        internal double EliteDiscount
         {
             get { return eliteDiscount; }
             set
@@ -106,7 +106,7 @@ namespace Frary_sp25_M24_t2
                 {
                     MessageBox.Show(ex.Message + " Please enter a new file name", "File Not Found");
                     // OFD.InitialDirectory = 
-                    OFD.Filter = "Text Files |*.txt | All Files | *.*";
+                    OFD.Filter = "Text Files|*.txt| All Files |*.*";
                     OFD.Title = "Open Configuration File";
                     OFD.ShowDialog();
                     cfgFile = OFD.FileName;
