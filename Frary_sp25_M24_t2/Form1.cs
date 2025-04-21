@@ -41,7 +41,7 @@ namespace Frary_sp25_M24_t2
                 }
             }
         }
-       internal double GoldDiscount
+        internal double GoldDiscount
         {
             get { return goldDiscount; }
             set
@@ -152,7 +152,24 @@ namespace Frary_sp25_M24_t2
 
 
             //read text boxes into variables 
-            widgetName = txtWidgetName.Text;
+            widgetName = txtWidgetName.Text.Trim();
+
+            // pretend widget name is a name of a person
+            // this code is not required for your project
+            // but you may want to use it if you have a customer name
+
+            string fName, lName;
+            int posSpace;
+
+            posSpace = widgetName.IndexOf(" ");
+            if (posSpace != -1)
+            {
+                fName = widgetName.Substring(0, posSpace);
+                lName = widgetName.Substring(posSpace).Trim();
+                lstOut.Items.Add("First Name is " + fName);
+                lstOut.Items.Add("Last Name is " + lName);
+            }
+
             //  percentDiscount = 0.25;
             // Parse converts strings to ints or double
             /*
@@ -276,10 +293,10 @@ namespace Frary_sp25_M24_t2
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            sf.txtRegular.Text = RegularDiscount.ToString();    
+            sf.txtRegular.Text = RegularDiscount.ToString();
             sf.txtGold.Text = GoldDiscount.ToString();
-            sf.txtElite.Text = EliteDiscount.ToString();    
-            sf.ShowDialog();    
+            sf.txtElite.Text = EliteDiscount.ToString();
+            sf.ShowDialog();
         }
     }
 }

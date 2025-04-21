@@ -151,3 +151,27 @@ The amount of widgets bought is 20
 The subtotal  is $200.00
 The percent discount is 10%
 The total cost for this transaction is $180.00
+*************** Beginning of Transaction 4/21/2025 11:15:50 AM  *****************
+The widget name is George Washington
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The subtotal  is $200.00
+The percent discount is 10%
+The total cost for this transaction is $180.00
+*************** Beginning of Transaction 4/21/2025 11:16:32 AM  *****************
+The widget name is George Washington
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The subtotal  is $200.00
+The percent discount is 10%
+The total cost for this transaction is $180.00
+*************** Beginning of Transaction 4/21/2025 11:16:45 AM  *****************
+The widget name is J S
+The Customer type is Regular
+The widget price is $10.00
+The amount of widgets bought is 20
+The subtotal  is $200.00
+The percent discount is 10%
+The total cost for this transaction is $180.00
