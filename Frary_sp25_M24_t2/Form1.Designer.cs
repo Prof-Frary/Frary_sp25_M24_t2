@@ -46,7 +46,9 @@
             OFD = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             settingsToolStripMenuItem = new ToolStripMenuItem();
+            showLogToolStripMenuItem = new ToolStripMenuItem();
             quitToolStripMenuItem = new ToolStripMenuItem();
+            numberArrayTestToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -199,7 +201,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, quitToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, showLogToolStripMenuItem, quitToolStripMenuItem, numberArrayTestToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(522, 24);
@@ -213,12 +215,26 @@
             settingsToolStripMenuItem.Text = "Settings";
             settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
+            // showLogToolStripMenuItem
+            // 
+            showLogToolStripMenuItem.Name = "showLogToolStripMenuItem";
+            showLogToolStripMenuItem.Size = new Size(71, 20);
+            showLogToolStripMenuItem.Text = "Show Log";
+            showLogToolStripMenuItem.Click += showLogToolStripMenuItem_Click;
+            // 
             // quitToolStripMenuItem
             // 
             quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             quitToolStripMenuItem.Size = new Size(42, 20);
             quitToolStripMenuItem.Text = "Quit";
             quitToolStripMenuItem.Click += btnQuit_Click;
+            // 
+            // numberArrayTestToolStripMenuItem
+            // 
+            numberArrayTestToolStripMenuItem.Name = "numberArrayTestToolStripMenuItem";
+            numberArrayTestToolStripMenuItem.Size = new Size(117, 20);
+            numberArrayTestToolStripMenuItem.Text = "Number Array Test";
+            numberArrayTestToolStripMenuItem.Click += numberArrayTestToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -271,5 +287,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem quitToolStripMenuItem;
+        private ToolStripMenuItem showLogToolStripMenuItem;
+        private ToolStripMenuItem numberArrayTestToolStripMenuItem;
     }
 }

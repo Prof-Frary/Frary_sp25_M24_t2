@@ -298,5 +298,50 @@ namespace Frary_sp25_M24_t2
             sf.txtElite.Text = EliteDiscount.ToString();
             sf.ShowDialog();
         }
+
+        private void showLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            const int MAX_LINES = 2000;
+            string[] logLines = new string[MAX_LINES];
+            StreamReader sr = File.OpenText(logFile);
+            int numLines = 0;
+            while (!sr.EndOfStream)
+            {
+                logLines[numLines] = sr.ReadLine();
+                numLines++;
+            }
+            int begin = -2;
+            int end = 4;
+            for (int i = 0; i < numLines; i++)
+            {
+                if (logLines[i] == "The Customer type is " + customerType)
+                {
+                    for (int j = i + begin; j <= i + end; j++)
+                    {
+                        lstOut.Items.Add(logLines[j]);
+                    }
+                }
+
+            }
+
+            double[] grades = new double[MAX_LINES];
+
+
+
+
+            sr.Close();
+        }
+
+        private void numberArrayTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int[] numbers = new int[50];
+            for (int i=0; i<25; i++)
+            {
+                numbers[i] = i;
+            }
+            lstOut.Items.Add(numbers.Average());
+
+
+        }
     }
 }
